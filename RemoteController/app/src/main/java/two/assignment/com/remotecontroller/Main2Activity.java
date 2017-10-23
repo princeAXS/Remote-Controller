@@ -7,6 +7,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -89,6 +91,7 @@ public class Main2Activity extends Activity implements SensorEventListener {
 
     @Override
     public final void onSensorChanged(SensorEvent event) {
+
         Sensor mySensor = event.sensor;
         float x,y,z;
         JSONObject coords = new JSONObject(),temp = new JSONObject();
@@ -171,6 +174,7 @@ public class Main2Activity extends Activity implements SensorEventListener {
 
                 break;
         }
+
         helper.publishMessage(coords.toString());
 //        long actualTime = event.timestamp; //get the event's timestamp
 //        if(actualTime - lastUpdate > 10000) {

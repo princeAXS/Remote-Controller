@@ -1,7 +1,6 @@
 package two.assignment.com.remotecontroller;
 
 import android.content.Context;
-import android.os.Parcelable;
 import android.util.Log;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -32,6 +31,7 @@ public class MqttHelper {
 
     private Context context;
 
+
     public MqttHelper(Context contxt){
         context = contxt;
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId);
@@ -60,6 +60,7 @@ public class MqttHelper {
                     disconnectedBufferOptions.setPersistBuffer(false);
                     disconnectedBufferOptions.setDeleteOldestMessages(false);
                     mqttAndroidClient.setBufferOpts(disconnectedBufferOptions);
+
                 }
 
                 @Override
